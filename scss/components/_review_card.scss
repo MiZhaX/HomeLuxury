@@ -1,0 +1,65 @@
+/// **Tarjeta de Reseña de Usuarios**  
+/// @group Reviews
+.review-card {
+    /// @prop {color(secondary)} background Color de fondo de la tarjeta  
+    /// @prop {1.5rem} padding Espaciado interno de la tarjeta  
+    /// @prop {10px} border-radius Bordes redondeados  
+    /// @prop {box-shadow} box-shadow Sombra para dar efecto de elevación  
+    /// @prop {center} text-align Centra el contenido del texto  
+    /// @prop {flex} display Usa flexbox para organizar los elementos  
+    /// @prop {column} flex-direction Coloca los elementos en columna  
+    /// @prop {center} align-items Centra los elementos en la tarjeta  
+    /// @prop {0.3s ease-in-out} transition Animación de escala al interactuar  
+    background: color(secondary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /// **Avatar del usuario en la reseña**  
+    .review-avatar {
+        /// @prop {75px} width Ancho de la imagen de perfil  
+        /// @prop {75px} height Alto de la imagen de perfil  
+        /// @prop {50%} border-radius Redondea la imagen para hacerla circular  
+        /// @prop {cover} object-fit Ajusta la imagen sin distorsionar  
+        /// @prop {1rem} margin-bottom Espaciado inferior  
+        /// @prop {2px solid color(primary)} border Borde alrededor del avatar  
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border: 2px solid color(primary);
+    }
+
+    /// **Texto de la reseña del usuario**  
+    .review-text {
+        /// @prop {size(md)} font-size Tamaño del texto  
+        /// @prop {color(tertiary)} color Color del texto  
+        /// @prop {italic} font-style Aplica estilo en cursiva  
+        /// @prop {1rem} margin-bottom Espaciado inferior  
+        font-size: size(md);
+        color: color(tertiary);
+        font-style: italic;
+        margin-bottom: 1rem;
+        
+        /// **Ajustes responsivos para pantallas medianas**  
+        @include responsive(md) {
+            font-size: size(sm);
+        }
+    }
+
+    /// **Nombre del usuario en la reseña**  
+    .review-user {
+        /// @prop {size(sm)} font-size Tamaño de la fuente  
+        /// @prop {color(primary)} color Color del nombre  
+        /// @prop {bold} font-weight Aplica negrita  
+        font-size: size(sm);
+        color: color(primary);
+        font-weight: bold;
+    }
+}

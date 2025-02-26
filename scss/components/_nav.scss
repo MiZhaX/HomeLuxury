@@ -1,0 +1,115 @@
+/// **Estilos para la barra de navegación principal**  
+/// @group Navigation
+.first-nav {
+    /// @prop {size(sm)} font-size Tamaño de fuente base para la navegación  
+    /// @prop {1rem} padding Espaciado interno  
+    /// @prop {4/10} grid-column Ocupa de la columna 4 a la 10 en el grid  
+    /// @prop {1/2} grid-row Ocupa la primera fila del grid  
+    font-size: size(sm);
+    padding: 1rem;
+    grid-column: 4/10;
+    grid-row: 1/2;
+
+    /// **Ajustes responsivos**  
+    /// - Reduce el tamaño de la fuente en pantallas grandes  
+    @include responsive(lg) {
+        font-size: size(xs);
+    }
+
+    /// - Ajusta el tamaño y distribución en pantallas medianas  
+    @include responsive(md) {
+        font-size: size(xxs);
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /// - Oculta la navegación en pantallas pequeñas  
+    @include responsive(sm) {
+        display: none;
+    }
+    
+    /// **Lista de navegación**  
+    &-list {
+        /// @prop {flex} display Usa flexbox para organizar los elementos  
+        /// @prop {row} flex-direction Acomoda los elementos en fila  
+        /// @prop {space-evenly} justify-content Distribuye los elementos de manera uniforme  
+        /// @prop {none} list-style Elimina los estilos de lista  
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        align-items: center;
+        height: 100%;
+    }
+
+    /// **Enlaces de la navegación**  
+    &-link {
+        /// @prop {color(quaternary)} color Color del enlace en estado normal  
+        /// @prop {none} text-decoration Elimina el subrayado  
+        /// @prop {weight(lighter)} font-weight Usa una fuente más ligera  
+        color: color(quaternary);
+        text-decoration: none;
+        font-weight: weight(lighter);
+
+        /// **Cambio de color al pasar el cursor**  
+        /// @prop {color(secondary)} hover Cambia el color en el estado hover  
+        &:hover {
+            color: color(secondary);
+        }
+    }
+}
+
+/// **Estilos para la barra de búsqueda**  
+/// @group Search
+.search-nav {
+    /// @prop {1/4} grid-column Ocupa desde la columna 1 hasta la 4  
+    /// @prop {2/3} grid-row Se posiciona en la segunda fila  
+    /// @prop {flex} display Usa flexbox para alinear los elementos  
+    grid-column: 1/4;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+
+    /// **Ajustes responsivos para móviles pequeños**  
+    /// - Reubica la barra de búsqueda en la cuadrícula  
+    @include responsive(sm) {
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+    }
+    
+    /// **Formulario de búsqueda**  
+    &-form {
+        /// @prop {flex} display Usa flexbox para alinear los elementos  
+        /// @prop {15px} gap Espacio entre los elementos del formulario  
+        display: flex;
+        gap: 15px;
+    }
+
+    /// **Botón de búsqueda**  
+    &-button {
+        /// **Aplica un mixin de estilos para botones**  
+        @include button-style();
+    }
+
+    /// **Campo de entrada de búsqueda**  
+    &-input {
+        /// @prop {size(xs)} font-size Tamaño de fuente  
+        /// @prop {none} border Elimina el borde  
+        /// @prop {color(tertiary)} background-color Fondo del input  
+        /// @prop {1px solid color(primary)} border-bottom Borde inferior visible  
+        font-size: size(xs);
+        border: none;
+        background-color: color(tertiary);
+        border-bottom: 1px solid color(primary);
+
+        /// **Ajustes responsivos para pantallas medianas**  
+        @include responsive(md) {
+            font-size: size(xxs);
+        }
+
+        /// **Elimina el borde cuando el input está enfocado**  
+        &:focus {
+            outline: none;
+        }
+    }
+}

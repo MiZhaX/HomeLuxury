@@ -1,0 +1,71 @@
+/// **Importación de fuentes**  
+/// Se importa la fuente `Nunito` con diferentes pesos (`300`, `400`, `700`).  
+/// @group Tipografía  
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+
+/// **Paleta de colores**  
+/// Mapa que almacena los colores principales de la aplicación.  
+/// @group Variables  
+$colors: (
+    primary: #1C1C1C,  ///< Color principal 
+    secondary: rgb(201, 164, 75), ///< Color secundario
+    tertiary: #F8F5F2, ///< Color claro, usado en fondos  
+    quaternary: #9a9999, ///< Color neutro para textos secundarios  
+    quinary: #2E4053 ///< Color oscuro adicional para contrastes  
+);
+
+/// **Función para obtener colores**  
+/// Retorna el valor hexadecimal de un color almacenado en `$colors`.  
+/// @param {string} $color-name El nombre del color en el mapa `$colors`.  
+/// @return {color} El valor del color en formato hexadecimal o `rgb`.  
+/// @group Funciones  
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+/// **Mapa de tamaños de fuente**  
+/// Define los tamaños tipográficos utilizados en la aplicación.  
+/// @group Tipografía  
+$font-sizes: (
+    xxl: 6rem,  ///< Extra grande  
+    xl: 3rem,  ///< Grande  
+    lg: 2.5rem,  ///< Medio-grande  
+    md: 2rem,  ///< Mediano  
+    sm: 1.8rem,  ///< Pequeño  
+    xs: 1.6rem,  ///< Extra pequeño  
+    xxs: 1.2rem  ///< Mínimo  
+);
+
+/// **Función para obtener tamaños de fuente**  
+/// Retorna el valor en `rem` del tamaño de fuente almacenado en `$font-sizes`.  
+/// @param {string} $size El nombre del tamaño en el mapa `$font-sizes`.  
+/// @return {rem} El tamaño en `rem`.  
+/// @group Funciones  
+@function size($size) {
+    @return map-get($font-sizes, $size);
+}
+
+/// **Mapa de pesos tipográficos**  
+/// Define los pesos tipográficos utilizados en la aplicación.  
+/// @group Tipografía  
+$font-weights: (
+    lighter: 100,  ///< Muy delgado  
+    light: 300,  ///< Delgado  
+    regular: 400,  ///< Normal  
+    bold: 700  ///< Negrita  
+);
+
+/// **Función para obtener pesos tipográficos**  
+/// Retorna el valor numérico del peso de fuente almacenado en `$font-weights`.  
+/// @param {string} $weight El nombre del peso en el mapa `$font-weights`.  
+/// @return {number} El valor numérico del peso de fuente.  
+/// @group Funciones  
+@function weight($weight) {
+    @return map-get($font-weights, $weight);
+}
+
+/// **Familias tipográficas**  
+/// Define las fuentes predeterminadas utilizadas en la aplicación.  
+/// @group Tipografía  
+$font-family: "Nunito", sans-serif; ///< Fuente principal para textos  
+$title-font: "Roboto", sans-serif; ///< Fuente secundaria para títulos  

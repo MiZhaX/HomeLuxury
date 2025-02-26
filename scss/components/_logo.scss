@@ -1,0 +1,47 @@
+/// **Estilos para el logotipo del encabezado**  
+/// @group Header
+.header-logo {
+    /// **Ubicación en la cuadrícula del header**  
+    /// @prop {1/2} grid-row Ocupa la primera fila del grid  
+    /// @prop {1/4} grid-column Ocupa desde la primera hasta la cuarta columna  
+    grid-row: 1/2;
+    grid-column: 1/4;
+
+    /// **Distribución y alineación**  
+    /// @prop {flex} display Usa flexbox para alinear los elementos  
+    /// @prop {center} align-items Centra verticalmente el contenido  
+    /// @prop {10px} gap Espaciado entre el logo y el título  
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /// **Ajustes responsivos para móviles pequeños**  
+    /// @include responsive(sm)  
+    /// - Alinea el logo a la derecha en pantallas pequeñas  
+    @include responsive(sm) {
+        justify-content: flex-end;
+    }
+
+    /// **Imagen del logo**  
+    &-img {
+        /// @prop {90px} width Ancho fijo de la imagen  
+        /// @prop {75px} height Alto fijo de la imagen  
+        width: 90px;
+        height: 75px;
+    }
+
+    /// **Título del logo**  
+    &-title {
+        /// @prop {size(lg)} font-size Tamaño de fuente grande  
+        /// @prop {color(primary)} color Color primario del sistema de diseño  
+        font-size: size(lg);
+        color: color(primary);
+
+        /// **Ajustes responsivos para tablets y pantallas medianas**  
+        /// @include responsive(md)  
+        /// - Reduce el tamaño de fuente en pantallas medianas  
+        @include responsive(md) {
+            font-size: size(md);
+        }
+    }
+}

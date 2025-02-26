@@ -1,0 +1,18 @@
+// IMPORTS DE VARIABLES SCSS
+@import './variables';
+@import './mixin';
+@import './base';
+
+@import './layout/header';
+@import './layout/hero';
+@import './layout/categories';
+@import './layout/featured_houses';
+@import './layout/reviews';
+@import './layout/footer';
+
+@import './components/nav';
+@import './components/logo';
+@import './components/form';
+@import './components/category_card';
+@import './components/houses_card';
+@import './components/review_card';

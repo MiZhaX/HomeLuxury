@@ -1,0 +1,67 @@
+/// **Tarjeta de casa destacada**  
+/// @group Cards
+.house-card {
+    /// **Estilos generales de la tarjeta**  
+    /// @prop {color(secondary)} background Color de fondo basado en la paleta de diseño  
+    /// @prop {10px} border-radius Bordes redondeados para un diseño más suave  
+    /// @prop {hidden} overflow Oculta el contenido que se desborde  
+    /// @prop {0 4px 10px rgba(0, 0, 0, 0.1)} box-shadow Sombra sutil para resaltar la tarjeta  
+    /// @prop {transform 0.3s ease-in-out} transition Animación suave al hacer hover  
+    background: color(secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+    /// **Distribución y alineación**  
+    /// @prop {flex} display Usa flexbox para organizar los elementos  
+    /// @prop {column} flex-direction Los elementos se apilan en columna  
+    /// @prop {center} align-items Centra los elementos horizontalmente  
+    /// @prop {center} text-align Alineación de texto centrada  
+    /// @prop {85%} width La tarjeta ocupa el 85% del contenedor  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 85%;
+
+    /// **Imagen de la tarjeta**  
+    &-image {
+        /// @prop {100%} width La imagen ocupa todo el ancho de la tarjeta  
+        /// @prop {400px} height Altura fija para mantener la proporción  
+        /// @prop {cover} object-fit Ajusta la imagen para que cubra sin deformarse  
+        width: 100%;
+        height: 400px; 
+        object-fit: cover;
+
+        /// **Efecto hover en la imagen**  
+        /// @prop {scale(1.05)} transform Hace zoom en la imagen al pasar el cursor  
+        /// @prop {pointer} cursor Cambia el cursor a tipo puntero  
+        &:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
+
+    /// **Título de la casa**  
+    &-title {
+        /// @prop {size(lg)} font-size Usa el tamaño grande definido en el sistema de diseño  
+        /// @prop {color(tertiary)} color Usa el color terciario de la paleta  
+        /// @prop {1rem 0} margin Margen superior e inferior para espaciarlo del contenido  
+        font-size: size(lg);
+        color: color(tertiary);
+        margin: 1rem 0;
+    }
+
+    /// **Precio de la casa**  
+    &-price {
+        /// @prop {size(md)} font-size Tamaño medio para resaltar el precio  
+        /// @prop {color(primary)} color Usa el color primario de la paleta  
+        /// @prop {bold} font-weight Hace que el precio resalte con negrita  
+        /// @prop {1rem} margin-bottom Espaciado inferior  
+        font-size: size(md);
+        color: color(primary);
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+}

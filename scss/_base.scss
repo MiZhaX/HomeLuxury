@@ -1,0 +1,38 @@
+/// **Estilos globales**  
+/// Define los estilos base y la estructura principal del diseño con CSS Grid.  
+/// @group Global
+*,
+*::after,
+*::before {
+    /// **Reset de estilos**  
+    /// @prop {0} margin Elimina los márgenes predeterminados  
+    /// @prop {0} padding Elimina los rellenos predeterminados  
+    /// @prop {$font-family} font-family Usa la fuente principal definida en la variable  
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+}
+
+/// **Configuración base del documento**  
+html {
+    /// @prop {62.5%} font-size Define el tamaño base del `html` para facilitar el uso de `rem`  
+    font-size: 62.5%;
+}
+
+/// **Contenedor principal**  
+/// Define la estructura de la página utilizando CSS Grid.  
+/// @group Layout
+.container {
+    /// **Configuración de Grid**  
+    /// @prop {grid} display Usa CSS Grid para organizar la disposición  
+    /// @prop {minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr)} grid-template-columns  
+    /// Define un layout flexible con márgenes laterales y 8 columnas ajustables  
+    /// @prop {repeat(6, min-content)} grid-template-rows Establece 6 filas con tamaño basado en el contenido  
+    /// @prop {1.6rem} grid-row-gap Espaciado entre filas para mejorar la separación  
+    /// @prop {color(tertiary)} background-color Aplica el color terciario de la paleta como fondo  
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+    grid-template-rows: repeat(6, min-content);
+    grid-row-gap: 1.6rem;
+    background-color: color(tertiary);
+}

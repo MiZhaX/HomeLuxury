@@ -1,0 +1,50 @@
+/// **Mixin para media queries**  
+/// Facilita la aplicación de estilos responsivos en distintos tamaños de pantalla.  
+/// @group Mixins
+/// @param {string} $breakpoint El tamaño del viewport para aplicar los estilos (`sm`, `md`, `lg`, `xl`).  
+/// - `sm`: hasta 426px  
+/// - `md`: hasta 768px  
+/// - `lg`: hasta 1024px  
+/// - `xl`: desde 1440px  
+@mixin responsive($breakpoint) {
+    @if $breakpoint == sm {
+        @media (max-width: 426px) { @content; }
+    } @else if $breakpoint == md {
+        @media (max-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+        @media (max-width: 1024px) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: 1440px) { @content; }
+    }
+}
+
+/// **Mixin para estilos de botones**  
+/// Aplica estilos predeterminados para botones, incluyendo color de fondo, tamaño de texto y efectos hover.  
+/// @group Mixins  
+@mixin button-style {
+    /// **Estilos base del botón**  
+    /// @prop {color(secondary)} background-color Color de fondo basado en la paleta de diseño  
+    /// @prop {color(tertiary)} color Color del texto basado en la paleta  
+    /// @prop {5px} padding Espaciado interno del botón  
+    /// @prop {size(xs)} font-size Tamaño del texto en estado normal  
+    /// @prop {none} border Elimina el borde predeterminado  
+    background-color: color(secondary);
+    color: color(tertiary);
+    padding: 5px;
+    font-size: size(xs);
+    border: none;
+
+    /// **Ajustes responsivos**  
+    /// @include responsive(md) Reduce el tamaño del texto en pantallas medianas  
+    @include responsive(md) {
+        font-size: size(xxs);
+    }
+
+    /// **Efecto hover**  
+    /// @prop {color(quinary)} background-color Cambia el color de fondo al pasar el cursor  
+    /// @prop {pointer} cursor Indica que el elemento es interactivo  
+    &:hover {
+        background-color: color(quinary);
+        cursor: pointer;
+    }
+}

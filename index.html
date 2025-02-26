@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://kit.fontawesome.com/c63f30e957.js" crossorigin="anonymous"></script>
+    <title>Home Luxury</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-logo">
+                <a href="#"><img src="img/logo.png" alt="logo" class="header-logo-img"></a>
+                <span class="header-logo-title">Home Luxury</span>
+            </div>
+            <!-- FIRST-NAV -->
+            <nav class="first-nav">
+                <ul class="first-nav-list">
+                    <li class="first-nav-item">
+                        <a href="#" class="first-nav-link">INICIO</a>
+                    </li>
+                    <li class="first-nav-item">
+                        <a href="#categories" class="first-nav-link">CATEGORÍAS</a>
+                    </li>
+                    <li class="first-nav-item">
+                        <a href="#featured-houses" class="first-nav-link">DESTACADAS</a>
+                    </li>
+                    <li class="first-nav-item">
+                        <a href="#" class="first-nav-link">RESEÑAS</a>
+                    </li>
+                    <li class="first-nav-item">
+                        <a href="#" class="first-nav-link">SOBRE NOSOTROS</a>
+                    </li>
+                    <li class="first-nav-item">
+                        <a href="#" class="first-nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- FORM-NAV -->
+            <nav class="form-nav">
+                <div class="form-nav-group">
+                    <label for="checkin">Entrada</label>
+                    <input class="form-nav-input" type="date" id="checkin" required>
+                </div>
+                <div class="form-nav-group">
+                    <label for="checkout">Salida</label>
+                    <input class="form-nav-input" type="date" id="checkout" required>
+                </div>
+                <div class="form-nav-group">
+                    <label for="rooms">Habitaciones</label>
+                    <select class="form-nav-input" id="rooms">
+                        <option value="1">1 Habitación</option>
+                        <option value="2">2 Habitaciones</option>
+                        <option value="3">3 Habitaciones</option>
+                        <option value="4">4 Habitaciones</option>
+                        <option value="5">5+ Habitaciones</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-nav-search">Buscar</button>
+            </nav>
+            <!-- SEARCH-NAV -->
+            <nav class="search-nav">
+                <form action="" class="search-nav-form">
+                    <input type="text" class="search-nav-input" placeholder="Buscar">
+                    <button class="search-nav-button">Buscar</button>
+                </form>
+            </nav>
+        </header>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <img src="./img/fondo_hero.jpg" alt="fondo_hero" class="hero-content-background">
+                <h1 class="hero-content-title">Home Luxury</h1>
+                <p class="hero-content-text">Encuentra tu hogar ideal</p>
+            </div>
+        </section>
+        <!-- CATEGORIES -->
+        <section class="categories" id="categories">
+            <h2 class="categories-title">Explora Nuestras Categorías</h2>
+            <div class="categories-container">
+                <div class="category category-campo">
+                    <h3 class="category-title">Campo</h3>
+                </div>
+                <div class="category category-playa">
+                    <h3 class="category-title">Playa</h3>
+                </div>
+                <div class="category category-ciudad">
+                    <h3 class="category-title">Ciudad</h3>
+                </div>
+                <div class="category category-deportes">
+                    <h3 class="category-title">Deportes</h3>
+                </div>
+            </div>
+        </section>
+        <!-- FEATURED-HOUSES -->
+        <section class="featured-houses" id="featured-houses">
+            <h2 class="featured-houses-title">Casas Destacadas</h2>
+            <div class="featured-houses-container">
+                <div class="house-card">
+                    <img src="./img/casa1.jpg" alt="Casa en la playa" class="house-card-image">
+                    <h3 class="house-card-title">Villa en la Playa</h3>
+                    <p class="house-card-price">$2,500 / noche</p>
+                </div>
+                <div class="house-card">
+                    <img src="./img/casa2.jpg" alt="Casa en la ciudad" class="house-card-image">
+                    <h3 class="house-card-title">Penthouse en la Ciudad</h3>
+                    <p class="house-card-price">$3,000 / noche</p>
+                </div>
+                <div class="house-card">
+                    <img src="./img/casa3.jpg" alt="Casa en el campo" class="house-card-image">
+                    <h3 class="house-card-title">Finca en el Campo</h3>
+                    <p class="house-card-price">$1,800 / noche</p>
+                </div>
+            </div>
+        </section>
+        <!-- REVIEWS -->
+        <section class="reviews">
+            <h2 class="reviews-title">Opiniones de nuestros clientes</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <img src="./img/perfilDefecto.png" alt="Juan Pérez" class="review-avatar">
+                    <p class="review-text">"Increíble experiencia, la casa era un sueño y el servicio impecable."</p>
+                    <span class="review-user">- Juan Pérez</span>
+                </div>
+                <div class="review-card">
+                    <img src="./img/perfilDefecto.png" alt="María López" class="review-avatar">
+                    <p class="review-text">"Las vistas eran espectaculares y la atención al detalle excepcional."</p>
+                    <span class="review-user">- María López</span>
+                </div>
+                <div class="review-card">
+                    <img src="./img/perfilDefecto.png" alt="Carlos Sánchez" class="review-avatar">
+                    <p class="review-text">"Definitivamente volveremos, fue una estancia de lujo total."</p>
+                    <span class="review-user">- Carlos Sánchez</span>
+                </div>
+                <div class="review-card">
+                    <img src="./img/perfilDefecto.png" alt="Martín García" class="review-avatar">
+                    <p class="review-text">"La casa está en un entorno espectacular, hemos estado un fin de semana de lujo en ella."</p>
+                    <span class="review-user">-Martín Garcia</span>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->             
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3 class="footer-title">Sobre Nosotros</h3>
+                    <p class="footer-text">Ofrecemos las mejores casas de lujo para alquiler en los destinos más exclusivos.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Casas Destacadas</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Home Luxury. Todos los derechos reservados.</p>
+            </div>
+        </footer>        
+    </div>
+</body>
+
+</html>

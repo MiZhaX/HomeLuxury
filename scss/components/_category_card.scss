@@ -1,0 +1,81 @@
+/// **Estilos para las categorías de casas de lujo**
+/// @group Categorías
+.category {
+    /// Contenedor principal de cada categoría
+    /// @prop {relative} position Posicionamiento relativo para manejar elementos internos
+    /// @prop {250px} height Altura fija de cada categoría
+    /// @prop {flex} display Usa flexbox para centrar contenido
+    /// @prop {center} align-items Alinea verticalmente los elementos
+    /// @prop {center} justify-content Centra horizontalmente los elementos
+    /// @prop {uppercase} text-transform Convierte el texto en mayúsculas
+    /// @prop {10px} border-radius Bordes redondeados
+    /// @prop {hidden} overflow Oculta elementos que sobresalgan
+    /// @prop {pointer} cursor Cambia el cursor a puntero
+    position: relative;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color(tertiary);
+    font-size: size(lg);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    /// **Efecto de oscurecimiento al pasar el mouse**
+    /// @prop {absolute} position Se posiciona sobre toda la tarjeta
+    /// @prop {rgba(0, 0, 0, 0.4)} background Capa semi-transparente negra
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        transition: background 0.3s ease-in-out;
+    }
+
+    /// **Efecto hover: Agranda la tarjeta y oscurece más el fondo**
+    /// @prop {scale(1.05)} transform Aumenta tamaño en un 5%
+    &:hover {
+        transform: scale(1.05);
+
+        &::before {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    /// **Título dentro de la categoría**
+    /// @prop {relative} position Para mantenerlo sobre la capa oscura
+    /// @prop {2} z-index Asegura que esté sobre el fondo
+    &-title {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/// **Fondo específico para cada categoría**
+/// @group Fondos
+.category-campo {
+    /// Imagen de fondo para casas de campo
+    background: url("../img/campo.jpg") center/cover no-repeat;
+}
+
+.category-playa {
+    /// Imagen de fondo para casas en la playa
+    background: url("../img/playa.jpg") center/cover no-repeat;
+}
+
+.category-ciudad {
+    /// Imagen de fondo para casas en la ciudad
+    background: url("../img/ciudad.jpg") center/cover no-repeat;
+}
+
+.category-deportes {
+    /// Imagen de fondo para casas con enfoque deportivo
+    background: url("../img/deportes.jpg") center/cover no-repeat;
+}

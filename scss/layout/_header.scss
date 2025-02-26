@@ -1,0 +1,32 @@
+/// **Encabezado de la página**  
+/// Contiene la barra de navegación y permanece fijo en la parte superior.  
+/// @group Header
+.header {
+    /// **Ubicación en el grid**  
+    /// @prop {1 / -1} grid-column Ocupa todo el ancho del grid  
+    /// @prop {1 / 2} grid-row Se posiciona en la primera fila del grid  
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    
+    /// **Configuración del grid**  
+    /// @prop {grid} display Usa CSS Grid para la disposición de elementos  
+    /// @prop {minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr)} grid-template-columns Define el tamaño de las columnas  
+    /// @prop {repeat(3, min-content)} grid-template-rows Define el número y tamaño de las filas  
+    /// @prop {0.5rem} grid-gap Espaciado entre elementos dentro del grid  
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 0.5rem;
+
+    /// **Propiedades adicionales**  
+    /// @prop {100} z-index Asegura que el encabezado esté por encima de otros elementos  
+    /// @prop {15px} padding Espaciado interno uniforme  
+    /// @prop {fixed} position Permanece fijo en la parte superior al hacer scroll  
+    /// @prop {100%} width Ocupa todo el ancho de la pantalla  
+    /// @prop {color(tertiary)} background-color Color de fondo basado en la paleta de diseño  
+    z-index: 100;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    background-color: color(tertiary);
+}

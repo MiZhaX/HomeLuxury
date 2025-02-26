@@ -1,0 +1,82 @@
+/// **Formulario de navegación en el navbar**  
+/// @group Formularios
+.form-nav {
+    /// Posicionamiento en el grid  
+    /// @prop {5/10} grid-column Ocupa desde la columna 5 a la 10 en escritorio  
+    /// @prop {2/3} grid-row Se ubica en la segunda fila  
+    grid-column: 5/10;
+    grid-row: 2/3;
+
+    /// Tamaño de fuente  
+    /// @prop {size(sm)} font-size Usa el tamaño pequeño definido en el sistema de diseño  
+    font-size: size(sm);
+
+    /// **Distribución y alineación**  
+    /// @prop {flex} display Usa flexbox para organizar los elementos  
+    /// @prop {row} flex-direction Acomoda los elementos en fila  
+    /// @prop {center} align-items Centra los elementos verticalmente  
+    /// @prop {15px} gap Espacio entre elementos  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    /// **Adaptación a pantallas grandes**  
+    /// @mixin responsive(lg) Ajusta el ancho en pantallas grandes  
+    @include responsive(lg) {
+        grid-column: 6/9;
+    }
+
+    /// **Adaptación a pantallas medianas**  
+    /// @mixin responsive(md) Reduce el tamaño del texto y ajusta la ubicación en el grid  
+    @include responsive(md) {
+        font-size: size(xxs);
+        grid-column: 7/9;
+    }
+
+    /// **Adaptación a pantallas pequeñas**  
+    /// @mixin responsive(sm) Ajusta la estructura a un diseño en grid para móviles  
+    @include responsive(sm) {
+        grid-row: 4/5;
+        grid-column: 1 / -1;
+        
+        /// Cambia la estructura a grid  
+        /// @prop {grid} display Cambia de flex a grid  
+        /// @prop {repeat(2, 1fr)} grid-template-columns Crea dos columnas iguales  
+        /// @prop {center} justify-items Centra los elementos en sus columnas  
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        margin-right: 4.5rem;
+    }
+
+    /// **Botón de búsqueda**  
+    /// @include button-style() Aplica estilos predefinidos para botones  
+    &-search {
+        @include button-style();
+    }
+
+    /// **Campo de entrada de texto**  
+    /// @mixin responsive(md) Ajusta el tamaño del texto en pantallas medianas  
+    &-input {
+        @include responsive(md) {
+            font-size: size(xxs);
+        }
+    }
+
+    /// **Grupo de elementos del formulario**  
+    &-group {
+        /// En pantallas medianas, los elementos se apilan en columna  
+        /// @mixin responsive(md) Cambia a columna y alinea los elementos a la izquierda  
+        @include responsive(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /// En pantallas pequeñas, los elementos se centran  
+        @include responsive(sm) {
+            align-items: center;
+        }
+    }
+}

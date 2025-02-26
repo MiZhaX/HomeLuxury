@@ -1,0 +1,52 @@
+/// **Sección Reviews**  
+/// Representa la sección de testimonios o reseñas de usuarios.  
+/// @group Reviews
+.reviews {
+    /// **Configuración general**  
+    /// @prop {center} text-align Alinea el texto al centro  
+    /// @prop {4rem 2rem} padding Espaciado interno alrededor del contenido  
+    /// @prop {0} padding-top Elimina el padding superior  
+    /// @prop {1 / -1} grid-column Se extiende a lo ancho de toda la cuadrícula  
+    /// @prop {5 / 6} grid-row Se ubica en la quinta fila del grid  
+    text-align: center;
+    padding: 4rem 2rem;
+    padding-top: 0;
+    grid-column: 1 / -1;
+    grid-row: 5 / 6; 
+
+    /// **Título de la sección**  
+    &-title {
+        /// @prop {$title-font} font-family Usa la fuente definida para títulos  
+        /// @prop {size(xxl)} font-size Tamaño de fuente extra grande  
+        /// @prop {color(primary)} color Usa el color primario de la paleta  
+        /// @prop {2rem} margin-bottom Espaciado inferior  
+        font-family: $title-font;
+        font-size: size(xxl);
+        color: color(primary);
+        margin-bottom: 2rem;
+
+        /// **Versión responsiva del título**  
+        @include responsive(md) {
+            /// @prop {size(xl)} font-size Reduce el tamaño en pantallas medianas  
+            font-size: size(xl);
+        }
+    }
+
+    /// **Contenedor de reseñas**  
+    &-container {
+        /// @prop {grid} display Usa CSS Grid para organizar las reseñas  
+        /// @prop {repeat(auto-fit, minmax(300px, 1fr))} grid-template-columns Ajusta automáticamente el número de columnas  
+        /// @prop {2rem} gap Espaciado entre elementos  
+        /// @prop {center} justify-content Centra los elementos en la cuadrícula  
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+
+        /// **Versión responsiva del contenedor**  
+        @include responsive(lg) {
+            /// @prop {repeat(2, 1fr)} grid-template-columns Reduce a dos columnas en pantallas grandes  
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

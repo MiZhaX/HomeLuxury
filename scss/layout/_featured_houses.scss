@@ -1,0 +1,48 @@
+/// **Sección de casas destacadas**  
+/// Contenedor que muestra una selección de casas destacadas en la página.  
+/// @group FeaturedHouses
+.featured-houses {
+    /// **Estilos generales**  
+    /// @prop {center} text-align Centra el contenido de la sección  
+    /// @prop {4rem 2rem} padding Espaciado interno lateral y vertical  
+    /// @prop {0} padding-top Elimina el espacio superior  
+    text-align: center;
+    padding: 4rem 2rem;
+    padding-top: 0;
+
+    /// **Ubicación en el grid**  
+    /// @prop {1 / -1} grid-column Ocupa todo el ancho del grid  
+    /// @prop {4 / 5} grid-row Se posiciona en la cuarta fila del grid  
+    grid-column: 1 / -1;
+    grid-row: 4 / 5; 
+
+    /// **Título de la sección**  
+    &-title {
+        /// @prop {$title-font} font-family Fuente específica para títulos  
+        /// @prop {size(xxl)} font-size Tamaño extra grande del sistema de diseño  
+        /// @prop {color(primary)} color Usa el color primario de la paleta  
+        /// @prop {2rem} margin-bottom Espaciado inferior  
+        font-family: $title-font;
+        font-size: size(xxl);
+        color: color(primary);
+        margin-bottom: 2rem;
+
+        /// **Ajuste del título en pantallas medianas**  
+        @include responsive(md) {
+            /// @prop {size(xl)} font-size Reduce el tamaño del título  
+            font-size: size(xl);
+        }
+    }
+
+    /// **Contenedor de las casas destacadas**  
+    &-container {
+        /// @prop {grid} display Usa CSS Grid para organizar las casas  
+        /// @prop {center} justify-items Centra los elementos en cada celda  
+        /// @prop {1fr} grid-template-columns Usa una sola columna por defecto  
+        /// @prop {2rem} gap Espaciado entre elementos  
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

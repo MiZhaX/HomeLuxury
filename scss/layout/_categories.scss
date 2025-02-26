@@ -1,0 +1,56 @@
+/// **Sección de categorías**  
+/// Contenedor principal que organiza y muestra las categorías de viviendas.  
+/// @group Categories
+.categories {
+    /// **Ubicación y alineación en el grid**  
+    /// @prop {1 / -1} grid-column Ocupa todo el ancho del grid  
+    /// @prop {3 / 4} grid-row Se posiciona en la tercera fila del grid  
+    grid-column: 1 / -1;
+    grid-row: 3 / 4; 
+
+    /// **Estilos generales**  
+    /// @prop {center} text-align Centra el contenido  
+    /// @prop {4rem 2rem} padding Espaciado interno superior e inferior  
+    text-align: center;
+    padding: 4rem 2rem;
+
+    /// **Adaptabilidad en pantallas medianas**  
+    @include responsive(md) {
+        /// @prop {0} padding-top Elimina el espacio superior en pantallas medianas  
+        padding-top: 0;
+    }
+
+    /// **Título de la sección**  
+    &-title {
+        /// @prop {$title-font} font-family Fuente específica para títulos  
+        /// @prop {size(xxl)} font-size Tamaño extra grande del sistema de diseño  
+        /// @prop {color(primary)} color Usa el color primario de la paleta  
+        /// @prop {2rem} margin-bottom Espaciado inferior  
+        font-family: $title-font;
+        font-size: size(xxl);
+        color: color(primary);
+        margin-bottom: 2rem;
+
+        /// **Ajuste del título en pantallas medianas**  
+        @include responsive(md) {
+            /// @prop {size(xl)} font-size Reduce el tamaño del título  
+            font-size: size(xl);
+        }
+    }
+
+    /// **Contenedor de las categorías**  
+    &-container {
+        /// @prop {grid} display Usa CSS Grid para organizar las categorías  
+        /// @prop {repeat(auto-fit, minmax(250px, 1fr))} grid-template-columns Ajuste automático de columnas con un mínimo de 250px  
+        /// @prop {1.5rem} gap Espaciado entre categorías  
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+
+        /// **Ajuste del grid en pantallas grandes**  
+        @include responsive(lg) {
+            /// @prop {repeat(2, 1fr)} grid-template-columns Limita las columnas a 2 en pantallas grandes  
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

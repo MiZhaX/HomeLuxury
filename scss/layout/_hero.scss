@@ -1,0 +1,95 @@
+/// **Sección Hero**  
+/// Representa la sección principal de la página con una imagen de fondo y texto destacado.  
+/// @group Hero
+.hero {
+    /// **Dimensiones y ubicación**  
+    /// @prop {98.93vw} width Ocupa casi todo el ancho de la ventana gráfica  
+    /// @prop {80vh} height Altura del 80% de la ventana gráfica  
+    /// @prop {1 / -1} grid-column Se extiende a lo ancho de toda la cuadrícula  
+    /// @prop {2 / 3} grid-row Se ubica en la segunda fila del grid  
+    /// @prop {15rem} margin-top Espaciado superior para compensar el encabezado  
+    width: 98.93vw;
+    height: 80vh;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin-top: 15rem;
+
+    /// **Contenido del Hero**  
+    &-content {
+        /// **Configuración del layout**  
+        /// @prop {flex} display Usa flexbox para organizar los elementos  
+        /// @prop {column} flex-direction Acomoda los elementos en columna  
+        /// @prop {center} justify-content Centra los elementos verticalmente  
+        /// @prop {center} align-items Centra los elementos horizontalmente  
+        /// @prop {center} text-align Texto centrado  
+        /// @prop {100%} height Ocupa toda la altura del contenedor  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+
+        /// **Capa de oscurecimiento**  
+        &::before {
+            /// @prop {""} content Se agrega un pseudo-elemento vacío  
+            /// @prop {absolute} position Se posiciona de manera absoluta sobre el contenedor  
+            /// @prop {0} top Posicionado en la parte superior  
+            /// @prop {0} left Posicionado en la parte izquierda  
+            /// @prop {100%} width Ancho completo  
+            /// @prop {100vh} height Altura completa de la ventana gráfica  
+            /// @prop {linear-gradient} background Aplica un degradado oscuro sobre la imagen  
+            /// @prop {1} z-index Se coloca por encima de la imagen de fondo  
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+            z-index: 1;
+        }
+
+        /// **Imagen de fondo del Hero**  
+        &-background {
+            /// @prop {absolute} position Se coloca en la posición absoluta dentro del contenedor  
+            /// @prop {0} top Se alinea en la parte superior  
+            /// @prop {0} left Se alinea en la parte izquierda  
+            /// @prop {100vw} width Ocupa todo el ancho de la ventana gráfica  
+            /// @prop {100%} height Ocupa toda la altura del contenedor  
+            /// @prop {cover} object-fit Ajusta la imagen sin deformarla  
+            /// @prop {0} z-index Se coloca en la capa más baja  
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw; 
+            height: 100%;
+            object-fit: cover; 
+            z-index: 0;
+        }
+
+        /// **Título del Hero**  
+        &-title {
+            /// @prop {size(xxl)} font-size Tamaño de fuente extra grande  
+            /// @prop {color(tertiary)} color Usa el color terciario de la paleta  
+            /// @prop {2px 2px 5px rgba(0, 0, 0, 0.5)} text-shadow Aplica una sombra al texto  
+            /// @prop {2} z-index Se coloca sobre la capa oscura  
+            font-size: size(xxl);
+            color: color(tertiary);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        /// **Texto descriptivo del Hero**  
+        &-text {
+            /// @prop {size(xl)} font-size Tamaño de fuente grande  
+            /// @prop {color(tertiary)} color Usa el color terciario de la paleta  
+            /// @prop {2px 2px 5px rgba(0, 0, 0, 0.5)} text-shadow Aplica una sombra al texto  
+            /// @prop {2} z-index Se coloca sobre la capa oscura  
+            font-size: size(xl);
+            color: color(tertiary);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+    }
+}
